@@ -1,18 +1,18 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class TouchController : MonoBehaviour
+namespace _Scripts
 {
-    private void OnMouseDown()
+    public class TouchController : MonoBehaviour
     {
-        Debug.Log("On Mouse Down!");
-    }
+        private void OnMouseDown()
+        {
+            Debug.Log("On Mouse Down!");
+        }
 
 
-    private void OnMouseUp()
-    {
-        Debug.Log("On Mouse Up!");
+        private void OnMouseUp()
+        {
+            Debug.Log("On Mouse Up!");
+        }
     }
 }
