@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: TileSetting
   m_EditorClassIdentifier: 
   rectangle:
-    prefab: {fileID: 0}
-    distance: {x: 0, y: 0}
+    prefab: {fileID: 6234793662008811449, guid: 9f58f38740fb3244494d5f71c7b2005d, type: 3}
+    distance: {x: 1.2, y: 1.2}
   hexagon:
     prefab: {fileID: 0}
     distance: {x: 0, y: 0}
