@@ -15,7 +15,7 @@ namespace _Scripts
         {
             time += Time.deltaTime;
 
-            text.text = time.ToString("F2");
+            text.text = time.ToString("0000");
         }
     }
 }

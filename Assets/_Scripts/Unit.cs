@@ -15,10 +15,20 @@ namespace _Scripts
 
         public SpriteRenderer Mask => mask;
         [SerializeField] private SpriteRenderer mask;
+
+        public SpriteRenderer Flag => flag;
+        [SerializeField] private SpriteRenderer flag;
+        
         
         [SerializeField] private TextMeshPro text;
         [SerializeField] private TileController tileController;
-        
+
+
+        private void Start()
+        {
+            flag.enabled = false;
+        }
+
 
         public void SetUnit(UnitState unitState)
         {
