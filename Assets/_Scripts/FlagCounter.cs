@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using _Scripts;
 using TMPro;
 using UnityEngine;
 
@@ -8,11 +10,39 @@ public class FlagCounter : MonoBehaviour
     [SerializeField] private TextMeshProUGUI text;
 
 
-    private int flagCount = 0;
+    private int flagCount;
+    private int flagAmount;
+
+
+    private void Start()
+    {
+        TouchManager.OnFlagCountChanged += TouchManager_OnFlagCountChanged;
+        flagAmount = GameController.Instance.GetMineAmount();
+        
+        UpdateText();
+    }
+
+
+    private void Update()
+    {
+        UpdateText();
+    }
+
+
+    private void TouchManager_OnFlagCountChanged(object sender, int e)
+    {
+        flagCount = e;
+    }
+
+
+    private void OnDestroy()
+    {
+        TouchManager.OnFlagCountChanged -= TouchManager_OnFlagCountChanged;
+    }
 
 
     private void UpdateText()
     {
-        text.text = flagCount.ToString();
+        text.text = (flagAmount - flagCount).ToString();
     }
 }

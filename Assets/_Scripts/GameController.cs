@@ -62,5 +62,11 @@ namespace _Scripts
                 unit.UpdateText();
             }
         }
+
+
+        public int GetMineAmount()
+        {
+            return mineAmount;
+        }
     }
 }
