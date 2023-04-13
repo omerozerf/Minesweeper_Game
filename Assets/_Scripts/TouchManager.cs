@@ -49,7 +49,6 @@ namespace _Scripts
                 }
             }
             OnFlagCountChanged?.Invoke(this, flagCount);
-            Debug.Log(flagCount);
         }
 
 
