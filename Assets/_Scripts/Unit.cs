@@ -1,4 +1,5 @@
-﻿using MyGrid.Code;
+﻿using System;
+using MyGrid.Code;
 using TMPro;
 using UnityEngine;
 
@@ -10,6 +11,10 @@ namespace _Scripts
 
         
         [SerializeField] private SpriteRenderer mySpriteRenderer;
+
+        public SpriteRenderer Mask => mask;
+        [SerializeField] private SpriteRenderer mask;
+        
         [SerializeField] private TextMeshPro text;
         [SerializeField] private TileController tileController;
         
@@ -41,7 +46,8 @@ namespace _Scripts
                     if (unit.unitState == UnitState.Mine) count++;
                 }
 
-                text.text = count.ToString();
+                string result = count > 0 ? count.ToString() : "";
+                text.text = result;
             }
         }
     }

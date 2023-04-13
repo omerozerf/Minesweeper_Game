@@ -6,9 +6,9 @@ using Random = UnityEngine.Random;
 
 namespace _Scripts
 {
-    public class GameManager : MonoBehaviour
+    public class GameController : MonoBehaviour
     {
-        public static GameManager Instance { get; private set; }
+        public static GameController Instance { get; private set; }
 
 
         [SerializeField] private int mineAmount;
@@ -32,11 +32,11 @@ namespace _Scripts
 
         private void Start()
         {
-            PrepareGame();
+            StartGame();
         }
 
         
-        private void PrepareGame()
+        private void StartGame()
         {
             // Fill List
 
