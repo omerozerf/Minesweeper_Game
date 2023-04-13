@@ -14,7 +14,6 @@ namespace _Scripts
         [SerializeField] private int mineAmount;
         
 
-
         private List<Unit> unitList = new List<Unit>();
 
 
