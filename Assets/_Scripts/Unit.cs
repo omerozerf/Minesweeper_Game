@@ -7,12 +7,14 @@ namespace _Scripts
         private UnitState unitState;
 
         
-        [SerializeField] private SpriteRenderer spriteRenderer;
+        [SerializeField] private SpriteRenderer mySpriteRenderer;
 
 
         public void Prepare(UnitState unitState)
         {
             this.unitState = unitState;
+
+            mySpriteRenderer.color = this.unitState == UnitState.Mine ? Color.red : Color.white;
         }
     }
 }
