@@ -32,20 +32,38 @@ namespace _Scripts
 
         private void Start()
         {
+            PrepareGame();
+        }
+
+        
+        private void PrepareGame()
+        {
             // Fill List
+
             foreach (var tile in GridManager.Instance.Tiles)
             {
                 Unit unit = tile.GetComponent<Unit>();
                 unitList.Add(unit);
             }
-            
-            
+
+
             // Set Mine
+
+            var list = new List<Unit>(unitList);
+
             for (int i = 0; i < mineAmount; i++)
             {
-                var index = Random.Range(0, unitList.Count);
-                var unit = unitList[index];
+                var index = Random.Range(0, list.Count);
+                var unit = list[index];
+
                 unit.Prepare(UnitState.Mine);
+                list.RemoveAt(index);
+            }
+
+
+            foreach (var unit in unitList)
+            {
+                unit.PrepareText();
             }
         }
     }
