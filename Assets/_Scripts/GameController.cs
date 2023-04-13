@@ -38,17 +38,13 @@ namespace _Scripts
         
         private void StartGame()
         {
-            // Fill List
-
             foreach (var tile in GridManager.Instance.Tiles)
             {
                 Unit unit = tile.GetComponent<Unit>();
                 unitList.Add(unit);
             }
 
-
-            // Set Mine
-
+            
             var list = new List<Unit>(unitList);
 
             for (int i = 0; i < mineAmount; i++)
@@ -56,14 +52,14 @@ namespace _Scripts
                 var index = Random.Range(0, list.Count);
                 var unit = list[index];
 
-                unit.Prepare(UnitState.Mine);
+                unit.SetUnit(UnitState.Mine);
                 list.RemoveAt(index);
             }
 
 
             foreach (var unit in unitList)
             {
-                unit.PrepareText();
+                unit.UpdateText();
             }
         }
     }

@@ -2,6 +2,7 @@
 using MyGrid.Code;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _Scripts
 {
@@ -10,7 +11,7 @@ namespace _Scripts
         private UnitState unitState;
 
         
-        [SerializeField] private SpriteRenderer mySpriteRenderer;
+        [SerializeField] private SpriteRenderer SpriteRenderer;
 
         public SpriteRenderer Mask => mask;
         [SerializeField] private SpriteRenderer mask;
@@ -19,15 +20,15 @@ namespace _Scripts
         [SerializeField] private TileController tileController;
         
 
-        public void Prepare(UnitState unitState)
+        public void SetUnit(UnitState unitState)
         {
             this.unitState = unitState;
 
-            mySpriteRenderer.color = this.unitState == UnitState.Mine ? Color.red : Color.white;
+            SpriteRenderer.color = this.unitState == UnitState.Mine ? Color.red : Color.white;
         }
 
 
-        public void PrepareText()
+        public void UpdateText()
         {
             if (unitState == UnitState.Mine)
             {
