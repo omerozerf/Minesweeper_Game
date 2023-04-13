@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace _Scripts
 {
-    public class TouchController : MonoBehaviour
+    public class TouchManager : MonoBehaviour
     {
         [SerializeField] private Unit unit;
 
@@ -13,7 +13,10 @@ namespace _Scripts
         
         private void OnMouseUp()
         {
-            unit.Mask.enabled = false;
+            if (!GetUnitHasFlag())
+            {
+                unit.Mask.enabled = false;
+            }
         }
 
 
@@ -23,9 +26,13 @@ namespace _Scripts
             {
                 unit.Flag.enabled = !unit.Flag.enabled;
                 hasFlag = !hasFlag;
-                
-                Debug.Log(hasFlag);
             }
+        }
+
+
+        private bool GetUnitHasFlag()
+        {
+            return hasFlag;
         }
     }
 }
