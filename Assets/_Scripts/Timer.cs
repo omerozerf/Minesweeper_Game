@@ -8,13 +8,14 @@ namespace _Scripts
         [SerializeField] private TextMeshProUGUI text;
 
 
+        private float time = 0f;
+        
+        
         private void Update()
         {
-            int timer = (int)Time.deltaTime;
-            Debug.Log(timer);
+            time += Time.deltaTime;
+
+            text.text = time.ToString("F2");
         }
-
-
-    
     }
 }
