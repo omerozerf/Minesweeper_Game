@@ -18,6 +18,9 @@ namespace _Scripts
 
         public SpriteRenderer Flag => flag;
         [SerializeField] private SpriteRenderer flag;
+
+        public SpriteRenderer Mine => mine;
+        [SerializeField] private SpriteRenderer mine;
         
         
         [SerializeField] private TextMeshPro text;
@@ -35,6 +38,7 @@ namespace _Scripts
             this.unitState = unitState;
 
             SpriteRenderer.color = this.unitState == UnitState.Mine ? Color.red : Color.white;
+            mine.enabled = this.unitState == UnitState.Mine;
         }
 
 
