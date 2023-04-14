@@ -79,6 +79,13 @@ namespace _Scripts
             mask.enabled = false;
 
 
+            if (unitState == UnitState.Mine)
+            {
+                GameController.Instance.TouchMine();
+                return;
+            }
+            
+
             if (countMine == 0)
             {
                 var neighbourList = tileController.GetAllNeighbours();
