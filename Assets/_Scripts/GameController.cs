@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using MyGrid.Code;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace _Scripts
@@ -12,10 +13,10 @@ namespace _Scripts
 
 
         [SerializeField] private int mineAmount;
-        
 
         private List<Unit> unitList = new List<Unit>();
-
+        private bool isTouchMine;
+        
 
         private void Awake()
         {
@@ -67,6 +68,21 @@ namespace _Scripts
         public int GetMineAmount()
         {
             return mineAmount;
+        }
+
+
+        public void TouchMine()
+        {
+            if (isTouchMine) return;
+            isTouchMine = true;
+            
+            foreach (var unit in unitList)
+            {
+                if (unit.unitState == UnitState.Mine)
+                {
+                    unit.Open();
+                }
+            }
         }
     }
 }

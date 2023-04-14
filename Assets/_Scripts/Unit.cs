@@ -8,7 +8,7 @@ namespace _Scripts
 {
     public class Unit : MonoBehaviour
     {
-        private UnitState unitState;
+        public UnitState unitState;
 
         
         [SerializeField] private SpriteRenderer SpriteRenderer;
