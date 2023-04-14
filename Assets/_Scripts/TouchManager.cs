@@ -19,7 +19,8 @@ namespace _Scripts
         {
             if (!GetUnitHasFlag())
             {
-                unit.Mask.enabled = false;
+                // unit.Mask.enabled = false;
+                unit.Open();
             }
         }
 

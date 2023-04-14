@@ -65,5 +65,12 @@ namespace _Scripts
                 text.text = result;
             }
         }
+
+
+        public void Open()
+        {
+            mask.enabled = false;
+            
+        }
     }
 }
