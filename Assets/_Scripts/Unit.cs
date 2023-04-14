@@ -27,6 +27,9 @@ namespace _Scripts
         [SerializeField] private TileController tileController;
 
 
+        private int countMine;
+
+
         private void Start()
         {
             flag.enabled = false;
@@ -63,14 +66,34 @@ namespace _Scripts
 
                 string result = count > 0 ? count.ToString() : "";
                 text.text = result;
+                countMine = count;
             }
         }
 
 
         public void Open()
         {
-            mask.enabled = false;
+            if(!IsOpen()) return;
             
+            
+            mask.enabled = false;
+
+
+            if (countMine == 0)
+            {
+                var neighbourList = tileController.GetAllNeighbours();
+                foreach (var neighbour in neighbourList)
+                {
+                    Unit unit = neighbour.GetComponent<Unit>();
+                    unit.Open();
+                }
+            }
+        }
+
+
+        public bool IsOpen()
+        {
+            return mask.enabled && !flag.enabled;
         }
     }
 }
