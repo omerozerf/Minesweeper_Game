@@ -31,13 +31,7 @@ namespace _Scripts
         }
 
 
-        private void Start()
-        {
-            StartGame();
-        }
-
-        
-        private void StartGame()
+        public void StartGame()
         {
             foreach (var tile in GridManager.Instance.Tiles)
             {
@@ -83,6 +77,12 @@ namespace _Scripts
                     unit.Open();
                 }
             }
+        }
+
+
+        public void SetMineAmount(int mineAmount)
+        {
+            this.mineAmount = mineAmount;
         }
     }
 }
