@@ -1,12 +1,5 @@
 {
   "dependencies": {
-    "com.bilalemregrkn.mygrid": {
-      "version": "https://github.com/bilalemregrkn/MyGrid.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "e7dfbff0202988488b6e319de1affa0f7647a79f"
-    },
     "com.febucci.custom-hierarchy": {
       "version": "https://github.com/febucci/unitypackage-custom-hierarchy.git",
       "depth": 0,

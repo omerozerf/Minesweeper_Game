@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "com.bilalemregrkn.mygrid": "https://github.com/bilalemregrkn/MyGrid.git",
     "com.febucci.custom-hierarchy": "https://github.com/febucci/unitypackage-custom-hierarchy.git",
     "com.unity.collab-proxy": "1.15.18",
     "com.unity.feature.2d": "1.0.0",
