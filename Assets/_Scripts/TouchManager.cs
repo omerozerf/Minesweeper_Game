@@ -17,7 +17,7 @@ namespace _Scripts
         
         private void OnMouseUp()
         {
-            if (!GetUnitHasFlag())
+            if (!GetUnitHasFlag() && StartButton.Instance.isStart)
             {
                 // unit.Mask.enabled = false;
                 unit.Open();

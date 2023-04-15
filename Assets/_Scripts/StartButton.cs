@@ -6,10 +6,29 @@ namespace _Scripts
 {
     public class StartButton : MonoBehaviour
     {
+        public static StartButton Instance { get; private set; }
+        
+        
         [SerializeField] private Button startButton;
         [SerializeField] private Transform menuGameObject;
         [SerializeField] private Transform inGameObject;
 
+
+        public bool isStart;
+        
+        
+        private void Awake()
+        {
+            if (Instance != null)
+            {
+                Debug.LogError("There is a more than Start Button!" + transform + "-" + Instance);
+                Destroy(gameObject);
+                return;
+            }
+
+            Instance = this;
+        }
+        
 
         private void Start()
         {
@@ -24,6 +43,10 @@ namespace _Scripts
             startButton.onClick.AddListener(() =>
                 inGameObject.gameObject.SetActive(true)
                 );
+            
+            startButton.onClick.AddListener((() => 
+                isStart = true
+                ));
         }
     }
 }
