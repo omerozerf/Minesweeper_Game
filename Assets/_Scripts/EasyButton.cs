@@ -6,6 +6,9 @@ namespace _Scripts
 {
     public class EasyButton : MonoBehaviour
     {
+        public GameDifficulty gameDifficulty;
+        
+        
         [SerializeField] private Button easyButton;
 
 
@@ -13,6 +16,10 @@ namespace _Scripts
         {
             easyButton.onClick.AddListener(() => 
                 GameController.Instance.SetMineAmount(3)
+                );
+            
+            easyButton.onClick.AddListener(() => 
+                gameDifficulty = GameDifficulty.Easy
                 );
         }
     }

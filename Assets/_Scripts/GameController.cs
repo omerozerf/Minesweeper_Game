@@ -16,6 +16,7 @@ namespace _Scripts
 
         private List<Unit> unitList = new List<Unit>();
         private bool isTouchMine;
+        public bool isFinish;
         
 
         private void Awake()
@@ -77,6 +78,11 @@ namespace _Scripts
                     unit.Open();
                 }
             }
+
+            Time.timeScale = 0;
+
+
+            isFinish = true;
         }
 
 

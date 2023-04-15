@@ -100,7 +100,7 @@ namespace _Scripts
 
         public bool IsOpen()
         {
-            return mask.enabled && !flag.enabled && StartButton.Instance.isStart;
+            return mask.enabled && !flag.enabled && StartButton.Instance.isStart && !GameController.Instance.isFinish;
         }
     }
 }
