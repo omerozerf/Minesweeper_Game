@@ -81,9 +81,7 @@ namespace _Scripts
             
             SoundManager.Instance.OnClickBomb();
             ParticleManager.Instance.TriggerParticleEffect();
-
-            Time.timeScale = 0;
-
+            
 
             isFinish = true;
         }

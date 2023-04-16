@@ -13,8 +13,9 @@ namespace _Scripts
         
         private void Update()
         {
+            if (GameController.Instance.isFinish) return;
+            
             time += Time.deltaTime;
-
             text.text = time.ToString("0000");
         }
     }
