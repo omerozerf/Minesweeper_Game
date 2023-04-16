@@ -91,5 +91,18 @@ namespace _Scripts
         {
             this.mineAmount = mineAmount;
         }
+
+
+        public void GameFinish()
+        {
+            foreach (var tile in GridManager.Instance.Tiles)
+            {
+                Unit unit = tile.GetComponent<Unit>();
+                if (unit.unitState != UnitState.Mine && !unit.Mask.enabled)
+                {
+                    
+                }
+            }
+        }
     }
 }

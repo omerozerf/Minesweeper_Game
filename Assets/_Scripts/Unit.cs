@@ -127,5 +127,8 @@ namespace _Scripts
         {
             return mask.enabled && !flag.enabled && StartButton.Instance.isStart && !GameController.Instance.isFinish;
         }
+        
+        
+        
     }
 }
