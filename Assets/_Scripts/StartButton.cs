@@ -47,6 +47,10 @@ namespace _Scripts
             startButton.onClick.AddListener((() => 
                 isStart = true
                 ));
+            
+            startButton.onClick.AddListener((() => 
+                    SoundManager.Instance.OnClickButton()
+                ));
         }
     }
 }

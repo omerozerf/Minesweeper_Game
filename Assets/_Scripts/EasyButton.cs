@@ -21,6 +21,10 @@ namespace _Scripts
             easyButton.onClick.AddListener(() => 
                 gameDifficulty = GameDifficulty.Easy
                 );
+            
+            easyButton.onClick.AddListener((() => 
+                    SoundManager.Instance.OnClickButton()
+                ));
         }
     }
 }

@@ -49,6 +49,7 @@ namespace _Scripts
             x3GameObject.gameObject.SetActive(true);
             HideX5();
             HideX8();
+            SoundManager.Instance.OnClickButton();
         }
     
     
@@ -57,6 +58,7 @@ namespace _Scripts
             x5GameObject.gameObject.SetActive(true);
             HideX3();
             HideX8();
+            SoundManager.Instance.OnClickButton();
         }
     
     
@@ -65,6 +67,7 @@ namespace _Scripts
             x8GameObject.gameObject.SetActive(true);
             HideX3();
             HideX5();
+            SoundManager.Instance.OnClickButton();
         }
     
     

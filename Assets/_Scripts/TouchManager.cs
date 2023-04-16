@@ -21,6 +21,7 @@ namespace _Scripts
             {
                 // unit.Mask.enabled = false;
                 unit.Open();
+                SoundManager.Instance.OnClickTile();
             }
         }
 
@@ -28,11 +29,16 @@ namespace _Scripts
         private void OnMouseOver()
         {
             int flagCount = 0;
-            if (Input.GetMouseButtonUp(1))
+            if (Input.GetMouseButtonUp(1) && StartButton.Instance.isStart)
             {
                 unit.Flag.enabled = !unit.Flag.enabled;
                 hasFlag = !hasFlag;
-                
+
+
+                if (!hasFlag) SoundManager.Instance.OnFlagged();
+                if (hasFlag) SoundManager.Instance.OnUnFlagged();
+
+
                 FlagCount(flagCount);
             }
         }

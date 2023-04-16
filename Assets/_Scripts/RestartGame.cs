@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using _Scripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -15,6 +16,10 @@ public class RestartGame : MonoBehaviour
     
     private void Start()
     {
+        restartGameButton.onClick.AddListener((() => 
+                SoundManager.Instance.OnClickButton()
+            ));
+        
         restartGameButton.onClick.AddListener((() => 
                 SceneManager.LoadScene(GAME_SCENE)));
     }

@@ -14,6 +14,10 @@ namespace _Scripts
             normalButton.onClick.AddListener(() => 
                 GameController.Instance.SetMineAmount(5)
             );
+
+            normalButton.onClick.AddListener((() => 
+                    SoundManager.Instance.OnClickButton()
+                ));
         }
     }
 }
