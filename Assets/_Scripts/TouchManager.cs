@@ -24,6 +24,7 @@ namespace _Scripts
                 // unit.Mask.enabled = false;
                 unit.Open();
                 if (unit.unitState != UnitState.Mine) SoundManager.Instance.OnClickTile();
+                GameController.Instance.GameWin();
             }
         }
 

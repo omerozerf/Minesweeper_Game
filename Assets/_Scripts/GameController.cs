@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using MyGrid.Code;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
@@ -13,9 +14,14 @@ namespace _Scripts
 
 
         [SerializeField] private int mineAmount;
+        [SerializeField] private TextMeshProUGUI winScreen;
+        
 
         private List<Unit> unitList = new List<Unit>();
         private bool isTouchMine;
+
+
+        public bool isGameWin;
         public bool isFinish;
         
 
@@ -49,6 +55,7 @@ namespace _Scripts
                 var unit = list[index];
 
                 unit.SetUnit(UnitState.Mine);
+                unit.isBomb = true;
                 list.RemoveAt(index);
             }
 
@@ -93,14 +100,22 @@ namespace _Scripts
         }
 
 
-        public void GameFinish()
+        public void GameWin()
         {
+            int counter = 0;
             foreach (var tile in GridManager.Instance.Tiles)
             {
                 Unit unit = tile.GetComponent<Unit>();
                 if (unit.unitState != UnitState.Mine && !unit.Mask.enabled)
                 {
-                    
+                    counter++;
+                }
+
+                if (GridManager.Instance.Tiles.Count - mineAmount == counter)
+                {
+                    winScreen.color = Color.green;
+                    winScreen.gameObject.SetActive(true);
+                    isGameWin = true;
                 }
             }
         }

@@ -9,6 +9,7 @@ namespace _Scripts
     public class Unit : MonoBehaviour
     {
         public UnitState unitState;
+        public bool isBomb;
 
         
         [SerializeField] private SpriteRenderer SpriteRenderer;
