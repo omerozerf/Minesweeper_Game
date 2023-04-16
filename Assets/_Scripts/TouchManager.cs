@@ -17,17 +17,21 @@ namespace _Scripts
         
         private void OnMouseUp()
         {
+            if (GameController.Instance.isFinish) return;
+            
             if (!GetUnitHasFlag() && StartButton.Instance.isStart)
             {
                 // unit.Mask.enabled = false;
                 unit.Open();
-                SoundManager.Instance.OnClickTile();
+                if (unit.unitState != UnitState.Mine) SoundManager.Instance.OnClickTile();
             }
         }
 
 
         private void OnMouseOver()
         {
+            if (GameController.Instance.isFinish) return;
+
             int flagCount = 0;
             if (Input.GetMouseButtonUp(1) && StartButton.Instance.isStart)
             {

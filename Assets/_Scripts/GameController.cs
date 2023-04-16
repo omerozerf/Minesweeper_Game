@@ -78,6 +78,8 @@ namespace _Scripts
                     unit.Open();
                 }
             }
+            
+            SoundManager.Instance.OnClickBomb();
 
             Time.timeScale = 0;
 

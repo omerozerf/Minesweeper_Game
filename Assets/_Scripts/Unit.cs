@@ -73,7 +73,12 @@ namespace _Scripts
 
         public void Open()
         {
-            if(!IsOpen()) return;
+            if (!IsOpen())
+            {
+                Debug.Log("açılamaz");
+                SoundManager.Instance.Warning();
+                return;
+            }
             
             
             mask.enabled = false;
