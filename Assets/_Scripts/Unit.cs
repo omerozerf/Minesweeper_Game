@@ -65,6 +65,26 @@ namespace _Scripts
                 }
 
                 string result = count > 0 ? count.ToString() : "";
+                if (result == "1")
+                {
+                    text.color = Color.cyan;
+                }
+                
+                if (result == "2")
+                {
+                    text.color = Color.green;
+                }
+                
+                if (result == "3")
+                {
+                    text.color = Color.yellow;
+                }
+                
+                if (result == "4")
+                {
+                    text.color = Color.red;
+                }
+                
                 text.text = result;
                 countMine = count;
             }
