@@ -1,26 +1,30 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using _Scripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class RestartGame : MonoBehaviour
+namespace _Scripts
 {
-    [SerializeField] private Button restartGameButton;
-
-
-    private const string GAME_SCENE = "_Scenes/GameScene";
-    
-    
-    private void Start()
+    public class RestartGame : MonoBehaviour
     {
-        restartGameButton.onClick.AddListener((() => 
-                SoundManager.Instance.OnClickButton()
-            ));
+        [SerializeField] private Button restartGameButton;
+
+
+        private const string GAME_SCENE = "_Scenes/GameScene";
+    
+    
+        private void Start()
+        {
+            restartGameButton.onClick.AddListener((() => 
+                    SoundManager.Instance.OnClickButton()
+                ));
         
-        restartGameButton.onClick.AddListener((() => 
-                SceneManager.LoadScene(GAME_SCENE)));
+            restartGameButton.onClick.AddListener((() => 
+                SceneManager.LoadScene(GAME_SCENE)
+                ));
+            
+            restartGameButton.onClick.AddListener((() => 
+                Time.timeScale = 1
+                ));
+        }
     }
 }

@@ -1,48 +1,47 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using _Scripts;
 using TMPro;
 using UnityEngine;
 
-public class FlagCounter : MonoBehaviour
+namespace _Scripts
 {
-    [SerializeField] private TextMeshProUGUI text;
-
-
-    private int flagCount;
-    private int flagAmount;
-
-
-    private void Start()
+    public class FlagCounter : MonoBehaviour
     {
-        TouchManager.OnFlagCountChanged += TouchManager_OnFlagCountChanged;
-        flagAmount = GameController.Instance.GetMineAmount();
+        [SerializeField] private TextMeshProUGUI text;
+
+
+        private int flagCount;
+        private int flagAmount;
+
+
+        private void Start()
+        {
+            TouchManager.OnFlagCountChanged += TouchManager_OnFlagCountChanged;
+            flagAmount = GameController.Instance.GetMineAmount();
         
-        UpdateText();
-    }
+            UpdateText();
+        }
 
 
-    private void Update()
-    {
-        UpdateText();
-    }
+        private void Update()
+        {
+            UpdateText();
+        }
 
 
-    private void TouchManager_OnFlagCountChanged(object sender, int e)
-    {
-        flagCount = e;
-    }
+        private void TouchManager_OnFlagCountChanged(object sender, int e)
+        {
+            flagCount = e;
+        }
 
 
-    private void OnDestroy()
-    {
-        TouchManager.OnFlagCountChanged -= TouchManager_OnFlagCountChanged;
-    }
+        private void OnDestroy()
+        {
+            TouchManager.OnFlagCountChanged -= TouchManager_OnFlagCountChanged;
+        }
 
 
-    private void UpdateText()
-    {
-        text.text = (flagAmount - flagCount).ToString();
+        private void UpdateText()
+        {
+            text.text = (flagAmount - flagCount).ToString();
+        }
     }
 }
